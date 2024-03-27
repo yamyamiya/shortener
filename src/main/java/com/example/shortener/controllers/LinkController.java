@@ -14,6 +14,11 @@ public class LinkController {
     @Autowired
     private LinkService service;
 
+    @GetMapping("/")
+    public String home() {
+        return "home";
+    }
+
     @PostMapping("/shorten")
     public Map<String, String> shortenUrl(@RequestBody Map<String, String> requestBody) {
         return service.shortenUrl(requestBody);
