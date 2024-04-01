@@ -1,19 +1,20 @@
-!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 <header>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link shortener</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </header>
 <body>
-Link shortener.
-<form action="/submit" method="post">
-    <label for="originalUrl">Original URL:</label><br>
-    <input type="text" id="originalUrl" name="originalUrl"><br><br>
+<form action="/" method="post">
+    <label for="longUrl">Original URL:</label><br>
+    <input type="text" class="urlInput" id="longUrl" name="longUrl"><br><br>
     <button type="submit">Submit</button>
 </form>
 </body>
 </html>
+
 
 
 
