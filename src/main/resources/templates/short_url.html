@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <header><title>Short URL</title></header>
 <body>
-<p th:text="'Your short URL is : ' + ${shortUrl} + '!'" />
+<p th:text="'Your short URL is : '"/>
+<a th:href="${shortUrl}" th:text="${shortUrl}"></a>
 </body>
 </html>

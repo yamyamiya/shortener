@@ -5,8 +5,6 @@ import com.example.shortener.repository.LinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 
@@ -36,15 +34,10 @@ public class LinkService {
         }
     }
 
-    public Map<String, String> shortenUrl(Map<String, String> requestBody) {
-        String longUrl = requestBody.get("url");
+    public String shortenUrl(String longUrl) {
         String shortUrl = generateShortUrl();
         Link link = new Link(shortUrl, longUrl);
         linkRepository.save(link);
-        Map<String, String> response = new HashMap<>();
-        response.put("shortUrl", baseUrl + shortUrl);
-        return response;
+        return baseUrl + shortUrl;
     }
-
-
 }
