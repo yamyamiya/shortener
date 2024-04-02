@@ -15,22 +15,11 @@ public class LinkController {
     @Autowired
     private LinkService service;
 
-//    @GetMapping(value = "/")
-//    public String home(Model model) {
-//        return "home";
-//    }
-
     @GetMapping(value = "/")
     public String home(Model model) {
         model.addAttribute("submitForm", new SubmitForm());
         return "home";
     }
-
-//    @PostMapping("/")
-//    public String shortenUrl(@RequestParam("longUrl") String longUrl, Model model) {
-//        model.addAttribute("shortUrl", service.shortenUrl(longUrl));
-//        return "short_url";
-//    }
 
     @PostMapping("/")
     public String shortenUrl(@Valid @ModelAttribute("submitForm") SubmitForm submitForm, BindingResult bindingResult, Model model) {
