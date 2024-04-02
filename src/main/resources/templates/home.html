@@ -7,9 +7,9 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </header>
 <body>
-<form action="/" method="post">
+<form action="/" th:object="${submitForm}" method="post">
     <label for="longUrl">Original URL:</label><br>
-    <input type="text" class="urlInput" id="longUrl" name="longUrl"><br><br>
+    <input type="text" class="urlInput" id="longUrl" name="url" th:field="*{url}" required pattern="https?://.+"><br>
     <button type="submit">Submit</button>
 </form>
 </body>
