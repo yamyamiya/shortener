@@ -1,8 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<header><title>Short URL</title></header>
+<header>
+    <title>Short URL</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</header>
 <body>
-<p th:text="'Your short URL is : '"/>
-<a th:href="${shortUrl}" th:text="${shortUrl}"></a>
+<header>
+    <div id="logo">
+        <a href="http://localhost:8080/" class="logo">Short URL</a>
+    </div>
+</header>
+<main>
+    <section id="urlbox">
+        <h1>Your short URL is :</h1>
+            <div id="formurl">
+                <a th:href="${shortUrl}" th:text="${shortUrl}"></a>
+            </div>
+    </section>
+</main>
 </body>
 </html>

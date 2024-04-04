@@ -4,14 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link shortener</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </header>
 <body>
-<form action="/" th:object="${submitForm}" method="post">
-    <label for="longUrl">Original URL:</label><br>
-    <input type="text" class="urlInput" id="longUrl" name="url" th:field="*{url}" required pattern="https?://.+"><br>
-    <button type="submit">Submit</button>
-</form>
+<header>
+    <div id="logo">
+        <a href="http://localhost:8080/" class="logo">Short URL</a>
+    </div>
+</header>
+<main>
+    <section id="urlbox">
+        <h1>Paste the URL to be shortened</h1>
+        <form action="/" th:object="${submitForm}" method="post">
+            <div id="formurl">
+                <input type="text" id="longUrl" placeholder="Enter the link here" name="url" th:field="*{url}" required
+                       pattern="https?://.+">
+                <div id="formbutton">
+                    <input type="submit" value="Shorten URL">
+                </div>
+            </div>
+        </form>
+        <p class="boxtextcenter">
+            ShortURL is a free tool to shorten URLs and generate short links
+            <br>
+            URL shortener allows to create a shortened link making it easy to share
+        </p>
+    </section>
+</main>
+<footer></footer>
 </body>
 </html>
 
