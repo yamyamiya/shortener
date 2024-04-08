@@ -14,20 +14,17 @@
 </header>
 <main>
     <section id="urlbox">
-        <h1>Paste the URL to be shortened</h1>
+        <h1 th:text="#{header}">Paste the URL to be shortened DEFAULT</h1>
         <form action="/" th:object="${submitForm}" method="post">
             <div id="formurl">
-                <input type="text" id="longUrl" placeholder="Enter the link here" name="url" th:field="*{url}" required
+                <input type="text" id="longUrl" th:placeholder="#{input-placeholder}" name="url" th:field="*{url}" required
                        pattern="https?://.+">
                 <div id="formbutton">
-                    <input type="submit" value="Shorten URL">
+                    <input type="submit" th:value="#{submit-button-value}">
                 </div>
             </div>
         </form>
-        <p class="boxtextcenter">
-            ShortURL is a free tool to shorten URLs and generate short links
-            <br>
-            URL shortener allows to create a shortened link making it easy to share
+        <p class="boxtextcenter" th:text="#{description}">
         </p>
     </section>
 </main>
