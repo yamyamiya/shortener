@@ -12,7 +12,7 @@
 </header>
 <main>
     <section id="urlbox">
-        <h1>Your short URL is :</h1>
+        <h1 th:text="#{short-url-header}"></h1>
             <div id="formurl">
                 <a th:href="${shortUrl}" th:text="${shortUrl}"></a>
             </div>
