@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.util.Objects;
+
 @Entity
 public class Link {
     @Id
@@ -28,5 +30,18 @@ public class Link {
     public Link(String shortUrl, String longUrl) {
         this.shortUrl = shortUrl;
         this.longUrl = longUrl;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Link link = (Link) o;
+        return Objects.equals(shortUrl, link.shortUrl) && Objects.equals(longUrl, link.longUrl);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(shortUrl, longUrl);
     }
 }
