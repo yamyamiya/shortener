@@ -13,9 +13,13 @@ public class LinkService {
     @Autowired
     private LinkRepository linkRepository;
 
+    public LinkService(LinkRepository linkRepository) {
+        this.linkRepository = linkRepository;
+    }
+
     private final String baseUrl = "http://localhost:8080/";
 
-    private String generateShortUrl() {
+    public String generateShortUrl() {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         StringBuilder newUrl = new StringBuilder();
         Random rand = new Random();
