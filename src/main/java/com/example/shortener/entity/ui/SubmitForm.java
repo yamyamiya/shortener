@@ -1,6 +1,10 @@
 package com.example.shortener.entity.ui;
 
+import org.hibernate.validator.constraints.URL;
+import org.springframework.validation.annotation.Validated;
+
 public class SubmitForm {
+    @URL
     public String getUrl() {
         return url;
     }
