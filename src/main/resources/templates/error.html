@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<header>
+    <title>Short URL</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</header>
+<body>
+<header>
+    <div id="logo">
+        <a href="http://localhost:8080/" class="logo">Short URL</a>
+    </div>
+</header>
+<main>
+    <section id="urlbox">
+        <h1 th:text="#{error-header}"></h1>
+        <img th:src="@{/img/error_cat.png}" alt="cat_error">
+        <p class="boxtextcenter" th:text="#{error-description}">
+        </p>
+    </section>
+</main>
+<footer></footer>
+</body>
+</html>
