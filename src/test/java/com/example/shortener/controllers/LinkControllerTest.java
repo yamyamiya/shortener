@@ -46,9 +46,11 @@ class LinkControllerTest {
 
     @Test
     public void shouldReturnCorrectViewWhenValidationPassed() throws Exception {
+        when(service.shortenUrl("https://example.com")).thenReturn("http://localhost:8080/rfg562");
         mockMvc.perform(post("/").param("url", "https://example.com"))
                 .andExpect(status().isOk())
-                .andExpect(model().attributeExists("shortUrl"));
+                .andExpect(model().attributeExists("shortUrl"))
+                .andExpect(view().name("short_url"));
     }
 
     @Test
