@@ -34,7 +34,7 @@ public class LinkService {
         if (link.isPresent()) {
             return "redirect:" + link.get().getLongUrl();
         } else {
-            return "Short URL is not found";
+            return "error";
         }
     }
 

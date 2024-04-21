@@ -47,7 +47,7 @@ class LinkServiceTest {
     public void shouldShowCorrespondingMessageWhenShotUrlIsNotExisting() {
         when(linkRepository.findByShortUrl("NotExistingShortUrl")).thenReturn(null);
         String redirectUrl = linkService.redirectToOriginalUrl("NotExistingShortUrl");
-        assertEquals("Short URL is not found", redirectUrl);
+        assertEquals("error", redirectUrl);
     }
 
     @Test

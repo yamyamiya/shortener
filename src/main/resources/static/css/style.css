@@ -98,3 +98,9 @@ p {
   font: 35px lato, arial;
   color: #46549b;
 }
+
+img {
+  width:202px;
+  height:187px;
+  margin-bottom: 20px;
+}
