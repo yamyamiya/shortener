@@ -66,4 +66,14 @@ class LinkControllerTest {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl(longUrl));
     }
+
+    @Test
+    public void shouldReturnCorrectViewWhenLinkDoesNotExist() throws Exception {
+        String longUrl = "https://example.com";
+        when(service.redirectToOriginalUrl("short-url")).thenReturn("error");
+        mockMvc.perform(get("/short-url"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("error"));
+    }
+
 }
