@@ -16,4 +16,18 @@ This Spring Boot project provides multilingual support for 5 languages using `Me
 * Italian
 * Russian
 
+## Screenshots
+
+### Home page
+
+<img src="screenshots/home_page.png" height="300px"/>
+
+### Result page
+
+<img src="screenshots/result_page.png" height="230px"/>
+
+### Error page
+
+<img src="screenshots/error_page.png" height="380px"/>
+
 
