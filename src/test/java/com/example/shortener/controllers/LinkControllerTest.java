@@ -75,7 +75,7 @@ class LinkControllerTest {
         when(service.redirectToOriginalUrl("short-url")).thenReturn("error");
         mockMvc.perform(get("/short-url"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("error"));
+                .andExpect(view().name("error21"));
     }
 
 }
