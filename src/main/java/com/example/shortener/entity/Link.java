@@ -7,6 +7,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.util.Objects;
 
 @Entity
+@Table(name="link")
 public class Link {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
