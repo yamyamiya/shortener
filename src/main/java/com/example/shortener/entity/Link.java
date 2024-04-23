@@ -14,12 +14,12 @@ public class Link {
     @Getter
     private long id;
 
-    @Column(name = "shortUrl")
+    @Column(name = "short_url")
     @NotNull
     @Getter
     private String shortUrl;
 
-    @Column(name = "longUrl", length = 100000)
+    @Column(name = "long_url", length = 100000)
     @NotNull
     @Getter
     private String longUrl;
