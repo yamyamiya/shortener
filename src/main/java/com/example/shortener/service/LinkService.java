@@ -29,14 +29,25 @@ public class LinkService {
         return newUrl.toString();
     }
 
+
     public String redirectToOriginalUrl(String shortUrl) {
+        String originalUrl = returnOriginalUrl(shortUrl);
+        if (!originalUrl.equals("error")) {
+            return "redirect:" + originalUrl;
+        }
+        return originalUrl;
+    }
+
+
+    public String returnOriginalUrl(String shortUrl) {
         Optional<Link> link = Optional.ofNullable(linkRepository.findByShortUrl(shortUrl));
         if (link.isPresent()) {
-            return "redirect:" + link.get().getLongUrl();
+            return link.get().getLongUrl();
         } else {
             return "error";
         }
     }
+
 
     public String shortenUrl(String longUrl) {
         String shortUrl = generateShortUrl();
