@@ -58,4 +58,18 @@ class LinkServiceTest {
         assertEquals("http://localhost:8080/rfg562", shortendUrl);
         verify(linkRepository).save(new Link("rfg562", longUrl));
     }
+
+    @Test
+    public void shouldReturnOriginalUrlWhenShotUrlIsExisting(){
+        when(linkRepository.findByShortUrl("existingShortUrl")).thenReturn(new Link("existingShortUrl", "existingLongUrl"));
+        String originalUrl = linkService.returnOriginalUrl("existingShortUrl");
+        assertEquals("existingLongUrl", originalUrl);
+    }
+
+    @Test
+    public void shouldShowErrorMessageWhenShotUrlIsNotExisting() {
+        when(linkRepository.findByShortUrl("NotExistingShortUrl")).thenReturn(null);
+        String originalUrl = linkService.returnOriginalUrl("NotExistingShortUrl");
+        assertEquals("error", originalUrl);
+    }
 }
